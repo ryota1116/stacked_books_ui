@@ -1,11 +1,9 @@
-
 {
-    "plugins": [
-      ["module-resolver", {
-        "root": ["./src"],
-        "alias": {
-          "@": "./src"
-        }
-      }]
-    ]
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "@": "./src"
+      }
+    }]
+  ]
 }
