@@ -1,31 +1,12 @@
-import logo from './logo.svg';
+import Button from '@mui/material/Button'
+import Header from './Components/page/Header';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div>
-          アプリ名
-        </div>
-        <div>
-          検索フォーム
-        </div>
-        <div>
-          アプリ名
-        </div>
-        <div>
-          本棚
-        </div>
-        <div>
-          読書量グラフ
-        </div>
-        <div>
-          新規登録
-        </div>
-        <div>
-          ログイン
-        </div>
+        <Header />
       </header>
 
       <body>
