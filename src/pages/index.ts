@@ -1,1 +1,1 @@
-import { TopPage } from '@/Components/page/Top'
+import * as TopPage from '../Components/page/Top'
