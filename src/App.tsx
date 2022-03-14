@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button'
 import Header from './Components/page/Header';
 import './App.css';
+import BookSearchForm from './Components/page/BookSearchForm';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
 
       <body>
         <div>
-          ボディ
+          <BookSearchForm />
         </div>
       </body>
     </div>
