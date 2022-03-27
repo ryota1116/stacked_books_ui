@@ -19,6 +19,8 @@ import InputBase from '@mui/material/InputBase';
 const pages = ['アプリ名', '本棚', '読書量グラフ', '新規登録', 'ログイン'];
 const settings = ['プロフィール', 'ログアウト'];
 
+
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
