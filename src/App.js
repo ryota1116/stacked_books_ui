@@ -1,4 +1,3 @@
-import Button from '@mui/material/Button'
 import Header from './components/Header';
 import { TopPage } from './components/TopPage';
 import './App.css';
