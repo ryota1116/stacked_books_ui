@@ -1,4 +1,4 @@
-export const Top = () => {
+export const TopPage = () => {
     return (
         <div>
             トップページ

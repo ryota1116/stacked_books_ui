@@ -1,5 +1,6 @@
 import Button from '@mui/material/Button'
-import Header from './Components/page/Header';
+import Header from './components/Header';
+import { TopPage } from './components/TopPage';
 import './App.css';
 
 function App() {
@@ -10,9 +11,7 @@ function App() {
       </header>
 
       <body>
-        <div>
-          ボディ
-        </div>
+        <TopPage />
       </body>
     </div>
   );
