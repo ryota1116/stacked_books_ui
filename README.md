@@ -1,3 +1,10 @@
+# 概要
+Stacked Booksのフロントエンド
+
+## 関連Repository
+- [サーバーサイド](https://github.com/ryota1116/stacked_books)
+- [API定義](https://github.com/ryota1116/stacked_books_api_definition)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
