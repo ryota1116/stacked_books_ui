@@ -1,11 +1,8 @@
-import Button from '@mui/material/Button'
-import Header from './Components/page/Header';
+import Header from './components/Header';
+import { TopPage } from './components/TopPage';
 import './App.css';
-import BookSearchForm from './Components/page/BookSearchForm';
+import BookSearchForm from './components/BookSearchForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Top } from './Components/page/Top';
-import { SignIn } from './Components/page/signin';
-import SignUpForm from './Components/page/signup';
 
 function App() {
   return (
@@ -17,7 +14,7 @@ function App() {
         <div>
           <BrowserRouter>
             <Routes>
-              <Route path='/' element={<Top />} />
+              <Route path='/' element={<TopPage />} />
               <Route path='/books/search' element={<BookSearchForm />} />
               <Route path='signup' element={<SignUpForm />} />
               <Route path='/signin' element={SignIn} />
