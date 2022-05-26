@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import { TopPage } from './components/TopPage';
 import './App.css';
-import BookSearchForm from './components/TopPage/BookSearchForm';
+import BookSearchForm from './components/BookSearchForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
         <Header />
       </header>
       <body>
-        <TopPage />
         <div>
           <BrowserRouter>
             <Routes>

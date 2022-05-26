@@ -1,3 +1,8 @@
+/*
+ * ==========
+ * Bookモデル
+ * ==========
+ */
 type Book = {
   googleBooksId: string;
   title: string;
