@@ -1,9 +1,8 @@
-import Button from '@mui/material/Button'
-import Header from './Components/page/Header';
+import Header from './components/Header';
+import { TopPage } from './components/TopPage';
 import './App.css';
-import BookSearchForm from './Components/page/BookSearchForm';
+import BookSearchForm from './components/TopPage/BookSearchForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Top } from './Components/page/Top';
 
 function App() {
   return (
@@ -12,10 +11,11 @@ function App() {
         <Header />
       </header>
       <body>
+        <TopPage />
         <div>
           <BrowserRouter>
             <Routes>
-              <Route path='/' element={<Top />} />
+              <Route path='/' element={<TopPage />} />
               <Route path='/books/search' element={<BookSearchForm />} />
             </Routes>
           </BrowserRouter>
