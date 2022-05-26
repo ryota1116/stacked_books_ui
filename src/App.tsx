@@ -3,6 +3,8 @@ import { TopPage } from './components/TopPage';
 import './App.css';
 import BookSearchForm from './components/BookSearchForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignUpForm from './components/SignUp';
+import SignInForm from './components/SignIn';
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
               <Route path='/' element={<TopPage />} />
               <Route path='/books/search' element={<BookSearchForm />} />
               <Route path='signup' element={<SignUpForm />} />
-              <Route path='/signin' element={SignIn} />
+              <Route path='/signin' element={<SignInForm />} />
             </Routes>
           </BrowserRouter>
         </div>
