@@ -11,7 +11,6 @@ import React from 'react';
 function App() {
   // stateの管理
   const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false);
-  const [isPrepared, setIsPrepared] = React.useState<boolean>(false);
   const [authToken, setAuthToken] = React.useState<string | null>(null);
 
   return (
@@ -23,10 +22,28 @@ function App() {
         <div>
           <BrowserRouter>
             <Routes>
-              <Route path='/' element={<TopPage />} />
-              <Route path='/books/search' element={<BookSearchForm />} />
-              <Route path='/signup' element={<SignUpForm />} />
-              <Route path='/signin' element={<SignInForm />} />
+              <Route
+                path='/'
+                element={<TopPage />}
+              />
+              <Route
+                path='/signup'
+                element={<SignUpForm />}
+              />
+              <Route
+                path='/signin'
+                element={<SignInForm />}
+              />
+              <Route
+                path='/books/search'
+                element={
+                  <PrivateRoute
+                    path='/books/search'
+                    element={<BookSearchForm />}
+                    redirect='/signin'
+                  />
+                }
+              />
             </Routes>
           </BrowserRouter>
         </div>
@@ -35,30 +52,8 @@ function App() {
   );
 }
 
-type PrivateRouteProps = {
-  element?: React.ReactNode | null;
-  path: string;
-}
-
-const PrivateRoute: React.FC<PrivateRouteProps> = ({
-  element, path
-}) => {
-  return (
-    <Route
-      element={
-        <RouteAuthGuard
-          component={element}
-          redirect='/signin'
-        />
-      }
-      path={path}
-    />
-  );
-}
-
 type Props = {
   isLoggedIn: boolean;
-  isPrepared: boolean;
   authToken: string;
 }
 
@@ -71,20 +66,30 @@ const IsLoggedIn = (): boolean => {
 }
 
 // https://zenn.dev/longbridge/articles/61b05d8bdb014d
-type RouteAuthGuardProps = {
-  component: React.ReactNode;
+type PrivateRouteProps = {
+  path: string;
+  element: React.ReactNode | null;
   redirect: string;
 }
 
-const RouteAuthGuard: React.VFC<RouteAuthGuardProps> = (
-  component, redirect
-) => {
+const PrivateRoute: React.FC<PrivateRouteProps> = ({
+  path, element, redirect
+}) => {
   if (IsLoggedIn()) {
-    return <>{component}</>
+    return (
+      <Route
+        path={path}
+        element={element}
+      />
+      // <Routes>
+      //   <Route
+      //     path={path}
+      //     element={element}
+      //   />
+      // </Routes>
+    )
   } else {
-    return <Navigate
-      to={redirect}
-    />
+    return <Navigate to={redirect} />
   }
 }
 
