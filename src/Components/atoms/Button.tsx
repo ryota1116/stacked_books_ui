@@ -10,12 +10,11 @@ type Props = {
 }
 
 const Button: React.FC<Props> = React.memo(
-    ({bg, border, onClick children}) => {
-        const ClassNAme = 
+    ({bg, border, onClick, children}) => {
 
         return (
-            <button onClick={onClick} className={}>
-
+            <button onClick={onClick}>
+                {children}
             </button>
         );
     }
